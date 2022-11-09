@@ -1,0 +1,10 @@
+*.exe
+*.dll
+*.gba
+*.sna
+*.sa*
+*.bps
+*.zip
+*.sym
+*.txt
+*.msg
