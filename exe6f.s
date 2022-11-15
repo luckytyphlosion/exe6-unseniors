@@ -10,5 +10,8 @@ OUTPUT_ROM         equ "exe6f-unseniors.gba"
 	.definelabel HiveBlockHappensHereFunction_OldHiveCheck, 0x802DAD8
 	.definelabel HiveBlockHappensHereFunction_Return, 0x802DB4C
 
+	.definelabel SpoutCrossBPwrAtkInitialize, 0x801225e
+	.definelabel SlashCrossBPwrAtkInitialize, 0x80122d2
+
 	.definelabel PlaySoundEffect, 0x80005CC
 	.definelabel fspace, 0x87ff4fc
