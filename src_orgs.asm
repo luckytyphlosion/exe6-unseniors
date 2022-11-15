@@ -1,7 +1,7 @@
 
 	; fix riskyhoney hive block difference on antidmg and antisword
 	.org HiveBlockHappensHereFunction
-	ldr r0, =Hook_DoHiveCheckFirst+1
+	ldr r0, =Hook_DoHiveCheckFirst|1
 	bx r0
 
 	.org HiveBlockHappensHereFunction_Fix0DamageAntiMagic
@@ -35,3 +35,11 @@ HiveBlockHappensHereFunction_AntiDmgNotTriggered:
 	strh r0, [r7, 0x6] ; atk boost
 	mov r0, 0x10
 	b SlashCrossBPwrAtkInitialize-0x6
+
+	.org TornadoDoubleDamage
+	ldr r1, =Hook_FixTornadoDoubleDamage|1
+	bx r1
+	.pool
+Hook_FixTornadoDoubleDamage_Return:
+	lsl r0, r0, 1
+	orr r0, r2

@@ -13,5 +13,9 @@ OUTPUT_ROM         equ "exe6g-unseniors.gba"
 	.definelabel SpoutCrossBPwrAtkInitialize, 0x801225e
 	.definelabel SlashCrossBPwrAtkInitialize, 0x80122d2
 
+	// need to maintain compatibility with exeguy11's patch
+	.definelabel TornadoDoubleDamage, 0x80cf10c
+
 	.definelabel PlaySoundEffect, 0x80005CC
+	.definelabel object_setPanelType, 0x800d226
 	.definelabel fspace, 0x87ff4fc

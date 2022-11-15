@@ -43,4 +43,18 @@ Hook_DoHiveCheckFirst:
 @@cancelDamage:
 	ldr r0, =HiveBlockHappensHereFunction_CancelDamage|1
 	bx r0
+
+Hook_FixTornadoDoubleDamage:
+	ldrb r1, [r5, 0x13]
+	mov r2, 2
+	ldr r3, =object_setPanelType|1
+	mov lr, pc
+	bx r3
+	ldrh r0, [r5, oBattleObject_Damage]
+	ldr r1, =0xf800 
+	mov r2, r1
+	and r2, r0
+	bic r0, r1
+	ldr r1, =Hook_FixTornadoDoubleDamage_Return|1
+	bx r1
 	.pool

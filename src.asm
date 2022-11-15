@@ -1,6 +1,7 @@
 
 	.gba
 	.include ver
+	.include "struct_offsets.asm"
 	; .include "macros.inc"
 	; .include "constants.inc"
 
