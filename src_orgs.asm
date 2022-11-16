@@ -1,4 +1,9 @@
 
+	.macro fizzle_chip, chip_id
+	.org 0x80221bc + (chip_id) * 44 + 0xb
+	.byte 0x1c, 3
+	.endmacro
+
 	; fix riskyhoney hive block difference on antidmg and antisword
 	.org HiveBlockHappensHereFunction
 	ldr r0, =Hook_DoHiveCheckFirst|1
@@ -57,3 +62,16 @@ Hook_BusterBugChargeShotDamageCalc_Return:
 
 	.org HandleElementManTimeout+0x1a
 Hook_FixElementManTimeout_Return:
+
+	fizzle_chip 18 ; GunDelEX
+	fizzle_chip 153 ; Otenko
+	fizzle_chip 256+19 ; HackJack
+	fizzle_chip 256+20 ; HackJckEX
+	fizzle_chip 256+21 ; HackJckSP
+	fizzle_chip 256+22 ; Django
+	fizzle_chip 256+23 ; Django2
+	fizzle_chip 256+24 ; Django3
+	fizzle_chip 256+55 ; DblBeast
+	fizzle_chip 256+56 ; Gregar
+	fizzle_chip 256+57 ; Falzar
+	fizzle_chip 256+93 ; CrosOver
