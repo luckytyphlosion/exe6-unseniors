@@ -57,4 +57,25 @@ Hook_FixTornadoDoubleDamage:
 	bic r0, r1
 	ldr r1, =Hook_FixTornadoDoubleDamage_Return|1
 	bx r1
+
+Hook_BusterBugChargeShotDamageCalc:
+	push r0
+	ldrb r0, [r5, oBattleObject_Alliance]
+	ldr r1, =callPossiblyGetBattleEmotion|1
+	mov lr, pc
+	bx r1
+	cmp r0, 5
+	pop r0
+	bne @@notVeryTired
+	mov r0, 1
+@@notVeryTired:
+	mov r1, 10
+	mul r0, r1
+	strh r0, [r7, oAIAttackVars_Damage]
+	mov r1, oNaviStats_Unk_4f 
+	ldr r0, =Hook_BusterBugChargeShotDamageCalc_Return|1
+	bx r0
+
 	.pool
+
+	

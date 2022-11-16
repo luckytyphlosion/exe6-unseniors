@@ -16,6 +16,10 @@ OUTPUT_ROM         equ "exe6g-unseniors.gba"
 	// need to maintain compatibility with exeguy11's patch
 	.definelabel TornadoDoubleDamage, 0x80cf10c
 
+	// buster bug very tired glitch
+	.definelabel callPossiblyGetBattleEmotion, 0x8016154
+	.definelabel BusterBugChargeShotDamageCalc_HookLoc, 0x8012098
+
 	.definelabel PlaySoundEffect, 0x80005CC
 	.definelabel object_setPanelType, 0x800d226
 	.definelabel fspace, 0x87ff4fc

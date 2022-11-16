@@ -8,3 +8,4 @@
 *.sym
 *.txt
 *.msg
+!constants_ewram.sym
