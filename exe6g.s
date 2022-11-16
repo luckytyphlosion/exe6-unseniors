@@ -1,6 +1,13 @@
 
-INPUT_ROM          equ "exe6g.gba"
-OUTPUT_ROM         equ "exe6g-unseniors.gba"
+	.if	TL_PATCH == 1
+		INPUT_ROM          equ "exe6g_us.gba"
+		OUTPUT_ROM         equ "exe6g_us-unseniors.gba"
+		.definelabel fspace, 0x88fa800
+	.else
+		INPUT_ROM          equ "exe6g.gba"
+		OUTPUT_ROM         equ "exe6g-unseniors.gba"
+		.definelabel fspace, 0x87ff4fc
+	.endif
 
 	.definelabel AirspinHP, 0x80dc4d4
 	.definelabel HiveBlockHappensHereFunction, 0x0802DA50
@@ -27,4 +34,3 @@ OUTPUT_ROM         equ "exe6g-unseniors.gba"
 	.definelabel object_setPanelType, 0x800d226
 	.definelabel GetPositiveSignedRNG2, 0x8001532
 	.definelabel sprite_setPalette, 0x8002d80
-	.definelabel fspace, 0x87ff4fc
