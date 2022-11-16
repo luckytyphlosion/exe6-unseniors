@@ -75,3 +75,6 @@ Hook_FixElementManTimeout_Return:
 	fizzle_chip 256+56 ; Gregar
 	fizzle_chip 256+57 ; Falzar
 	fizzle_chip 256+93 ; CrosOver
+
+	.org AirspinHP
+	.halfword 400
