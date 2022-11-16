@@ -49,3 +49,11 @@ Hook_FixTornadoDoubleDamage_Return:
 	bx r1
 	.pool
 Hook_BusterBugChargeShotDamageCalc_Return:
+
+	.org HandleElementManTimeout
+	ldr r0, =Hook_FixElementManTimeout|1
+	bx r0
+	.pool
+
+	.org HandleElementManTimeout+0x1a
+Hook_FixElementManTimeout_Return:

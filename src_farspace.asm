@@ -76,6 +76,28 @@ Hook_BusterBugChargeShotDamageCalc:
 	ldr r0, =Hook_BusterBugChargeShotDamageCalc_Return|1
 	bx r0
 
+Hook_FixElementManTimeout:
+	ldr r0, =GetPositiveSignedRNG2|1
+	mov lr, pc
+	bx r0
+	mov r1, 3
+	and r0, r1
+	str r0, [r5, oBattleObject_ExtraVars]
+	ldr r1, =@@elementManPalettes
+	ldrb r0, [r1, r0]
+	ldr r1, =sprite_setPalette|1
+	mov lr, pc
+	bx r1
+	mov r0, 0xc
+	strb r0, [r5, oBattleObject_CurAction]
+	mov r0, 0
+	strh r0, [r5, oBattleObject_CurPhaseAndPhaseInitialized]
+	ldr r0, =Hook_FixElementManTimeout_Return|1
+	bx r0
+
+@@elementManPalettes:
+	.byte 2, 4, 8, 6
+
 	.pool
 
 	

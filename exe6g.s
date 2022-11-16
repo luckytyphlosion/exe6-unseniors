@@ -20,6 +20,11 @@ OUTPUT_ROM         equ "exe6g-unseniors.gba"
 	.definelabel callPossiblyGetBattleEmotion, 0x8016154
 	.definelabel BusterBugChargeShotDamageCalc_HookLoc, 0x8012098
 
+	// elementman timeout
+	.definelabel HandleElementManTimeout, 0x80be506
+
 	.definelabel PlaySoundEffect, 0x80005CC
 	.definelabel object_setPanelType, 0x800d226
+	.definelabel GetPositiveSignedRNG2, 0x8001532
+	.definelabel sprite_setPalette, 0x8002d80
 	.definelabel fspace, 0x87ff4fc
