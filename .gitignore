@@ -9,3 +9,6 @@
 *.txt
 *.msg
 !constants_ewram.sym
+!tools/floating/*
+!tools/armips.exe
+tools/floating/flipscfg.bin
