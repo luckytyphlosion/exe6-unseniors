@@ -1,5 +1,4 @@
 
-	.org fspace
 Hook_DoHiveCheckFirst:
 	push r4,r6,r7,lr
 	ldr r4, [r5, 0x54]
